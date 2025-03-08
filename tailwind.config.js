@@ -17,6 +17,7 @@ export default {
       backgroundImage: {
         "dark-gradient": "linear-gradient(to bottom, #1A1A1A, #131313)",  
       },
+  
     },
   },
   plugins: [],
