@@ -4,7 +4,7 @@ import profileImage from '../../assets/geist.png';
 import avtar   from '../../assets/Neutral Minimal Simple Elegant Quote Instagram Post.png';
 
 // Array of languages
-const texts = ['Avaneesh', '阿瓦尼什', 'अवनीशः', 'Аваниш', 'اونیش'];
+const texts = ['Avaneesh', '阿瓦尼什', 'अवनीशः', 'Аваниш',];
 
 const Hero = () => {
   const [index, setIndex] = useState(0);
@@ -13,7 +13,7 @@ const Hero = () => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % texts.length);
     }, 2000); // Change text every 2 seconds
-    return () => clearInterval(interval);
+    return () => clearInterval(interval);   
   }, []);
 
   return (
