@@ -1,101 +1,3 @@
-// import { FaArrowRight } from "react-icons/fa";
-// import Project_1_image from "/src/assets/freepik__upload__8902.png";
-
-// function Project() {
-//   return (
-//     <div className="w-full max-md:w-[80%] max-sm:w-full flex flex-col items-center text-cyan-50 py-10">
-//       <h1 className="text-3xl font-bold mb-8">Projects</h1>
-
-//       {/* Projects Container */}
-//       <div className="flex flex-col gap-8 w-full max-w-5xl px-4">
-//         {/* Project 1 */}
-//         <div className="flex flex-col md:flex-row-reverse items-center gap-6 bg-gray-800 p-6 rounded-sm shadow-lg">
-//           <img
-//             src={Project_1_image}
-//             alt="Project 1"
-//             className="w-[224px] h-auto md:w-[300px] lg:w-[350px] rounded-lg"
-//           />
-
-//           <div className="flex flex-col justify-center max-w-lg">
-//             <h2 className="text-2xl font-semibold">Project 1 Name</h2>
-//             <p className="text-gray-300 mt-2">
-//               Subbi is a side project that I’ve built to help me keep track of how much
-//               I spend on subscriptions and prevent the “accidental” bill after a trial ends.
-//               It tracks bills like Netflix, Spotify, Xbox Game Pass, and more.
-//             </p>
-
-//             {/* Button */}
-//             <div className="mt-4">
-//               <button className="flex items-center border gap-2 border-gray-600 text-white rounded-lg hover:bg-gray-700 px-5 py-2 rounded-lg transition">
-//                 Go To Live
-//                 <FaArrowRight />
-//               </button>
-//             </div>
-//           </div>
-//         </div>
-
-//         {/* Additional Projects Can Be Added Here */}
-
-
-//         <div className="flex flex-col md:flex-row-reverse items-center gap-6 bg-gray-800 p-6 rounded-sm shadow-lg">
-//           <img
-//             src={Project_1_image}
-//             alt="Project 1"
-//             className="w-[224px] h-auto md:w-[300px] lg:w-[350px] rounded-lg"
-//           />
-
-//           <div className="flex flex-col justify-center max-w-lg">
-//             <h2 className="text-2xl font-semibold">Project 1 Name</h2>
-//             <p className="text-gray-300 mt-2">
-//               Subbi is a side project that I’ve built to help me keep track of how much
-//               I spend on subscriptions and prevent the “accidental” bill after a trial ends.
-//               It tracks bills like Netflix, Spotify, Xbox Game Pass, and more.
-//             </p>
-
-//             {/* Button */}
-//             <div className="mt-4">
-//               <button className="flex items-center border gap-2 border-gray-600 text-white rounded-lg hover:bg-gray-700 px-5 py-2 rounded-lg transition">
-//                 Go To Live
-//                 <FaArrowRight />
-//               </button>
-//             </div>
-//           </div>
-//         </div>
-
-
-//         <div className="flex flex-col md:flex-row-reverse items-center gap-6 bg-gray-800 p-6 rounded-sm shadow-lg">
-//           <img
-//             src={Project_1_image}
-//             alt="Project 1"
-//             className="w-[224px] h-auto md:w-[300px] lg:w-[350px] rounded-lg"
-//           />
-
-//           <div className="flex flex-col justify-center max-w-lg">
-//             <h2 className="text-2xl font-semibold">Project 1 Name</h2>
-//             <p className="text-gray-300 mt-2">
-//               Subbi is a side project that I’ve built to help me keep track of how much
-//               I spend on subscriptions and prevent the “accidental” bill after a trial ends.
-//               It tracks bills like Netflix, Spotify, Xbox Game Pass, and more.
-//             </p>
-
-//             {/* Button */}
-//             <div className="mt-4">
-//               <button className="flex items-center border gap-2 border-gray-600 text-white rounded-lg hover:bg-gray-700 px-5 py-2 rounded-lg transition">
-//                 Go To Live
-//                 <FaArrowRight />
-//               </button>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Project;
-
-
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FaArrowRight } from "react-icons/fa";
 import "swiper/css";
@@ -160,27 +62,32 @@ const projects = [
 
 export default function ProjectSlider() {
   return (
-    <div className="w-full flex flex-col items-center text-cyan-50 py-10 bg-black">
-      <h1 className="text-4xl font-bold mb-6">Projects</h1>
+    <div className="w-full flex flex-col items-center text-white py-10 ">
+      <h1 className="text-5xl font-bold mb-6">Projects</h1>
 
       <Swiper
         spaceBetween={20}
-        slidesPerView={1}
+        slidesPerView={3}
         breakpoints={{
           640: { slidesPerView: 1 },
           768: { slidesPerView: 2 },
           1024: { slidesPerView: 3 }
         }}
-        centeredSlides={true}
+        centeredSlides={false}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
-        pagination={{ clickable: true }}
-        navigation={false}
+        pagination={{ clickable: false,
+        el: '.custom-pagination', 
+         }}
+        navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="w-full max-w-5xl"
+        className="w-full max-w-5xl "
       >
+
+        {/* <div className="custom-pagination   bg-[#181818]  flex felx-row  justify-center justify-items-center "></div>  */}
+        
         {projects.map((project) => (
           <SwiperSlide key={project.id} className="flex justify-center">
-            <div className="flex flex-col items-center bg-gray-800 p-6 rounded-xl shadow-lg max-w-sm text-center">
+            <div className="flex flex-col items-center    bg-[#181818] p-6 rounded-xl shadow-lg max-w-sm text-center">
               <img
                 src={project.image}
                 alt={project.name}
@@ -190,10 +97,13 @@ export default function ProjectSlider() {
               <p className="text-gray-300 mt-2">{project.description}</p>
               <a
                 href={project.link}
-                className="mt-4 flex items-center gap-2 border border-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition"
+                className="mt-4 flex items-center gap-2 border-solid border border-[#383737] text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition"
               >
-                Go To Live <FaArrowRight />
+                Visit Site <FaArrowRight />
               </a>
+              
+             
+              
             </div>
           </SwiperSlide>
         ))}
