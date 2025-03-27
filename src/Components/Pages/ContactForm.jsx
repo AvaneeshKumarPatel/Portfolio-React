@@ -1,7 +1,42 @@
-import { FaGithub, FaLinkedin, FaTwitter,FaInstagram } from "react-icons/fa";
-
+import { useState } from "react";
+import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ContactForm = () => {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    let newErrors = {};
+    
+    if (!name.trim()) newErrors.name = "Name is required";
+    if (!email.trim() || !/\S+@\S+\.\S+/.test(email)) newErrors.email = "Valid email is required";
+    if (!subject.trim()) newErrors.subject = "Subject is required";
+    if (!message.trim()) newErrors.message = "Message cannot be empty";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (validateForm()) {
+      toast.success("Form submitted successfully! 🚀");
+      setName("");
+      setEmail("");
+      setSubject("");
+      setMessage("");
+      setErrors({});
+    } else {
+      toast.error("Please fill in all fields correctly.");
+    }
+  };
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-black px-4">
       {/* Header Section */}
@@ -16,7 +51,6 @@ const ContactForm = () => {
       <div className="max-w-screen-md w-full bg-[#141414] rounded-xl p-6 shadow-lg border border-gray-800">
         {/* MacOS Window Header */}
         <div className="flex items-center justify-between bg-[#1a1a1a] px-4 py-2 rounded-t-xl border-b border-gray-700">
-          {/* MacOS Style Buttons */}
           <div className="flex space-x-2">
             <span className="w-3 h-3 bg-red-500 rounded-full"></span>
             <span className="w-3 h-3 bg-yellow-500 rounded-full"></span>
@@ -25,59 +59,77 @@ const ContactForm = () => {
           <p className="text-white text-sm text-center flex-1 absolute left-1/2 transform -translate-x-1/2">
             New message
           </p>
-          <div></div> {/* Empty div to balance flex spacing */}
         </div>
 
         {/* Form Inputs */}
-        <div className="space-y-4 mt-4">
+        <form onSubmit={handleSubmit} className="space-y-4 mt-4">
           {/* Email Field */}
-          <div className="flex items-center space-x-2">
-            <label className="text-white w-24 sm:w-32">Email:</label>
+          <div>
+            <label className="text-white">Email:</label>
             <input
               type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email address"
-              className="flex-1 p-3 bg-transparent text-white placeholder-gray-600 border-b border-gray-700 focus:outline-none"
+              className="w-full p-3 bg-transparent text-white placeholder-gray-600 border-b border-gray-700 focus:outline-none"
             />
+            {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
           </div>
 
           {/* Name Field */}
-          <div className="flex items-center space-x-2">
-            <label className="text-white w-24 sm:w-32">Name:</label>
+          <div>
+            <label className="text-white">Name:</label>
             <input
               type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               placeholder="Enter your name"
-              className="flex-1 p-3 bg-transparent text-white placeholder-gray-600 border-b border-gray-700 focus:outline-none"
+              className="w-full p-3 bg-transparent text-white placeholder-gray-600 border-b border-gray-700 focus:outline-none"
             />
+            {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
           </div>
 
           {/* Subject Field */}
-          <div className="flex items-center space-x-2">
-            <label className="text-white w-24 sm:w-32">Subject:</label>
+          <div>
+            <label className="text-white">Subject:</label>
             <input
               type="text"
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
               placeholder="Enter subject"
-              className="flex-1 p-3 bg-transparent text-white placeholder-gray-600 border-b border-gray-700 focus:outline-none"
+              className="w-full p-3 bg-transparent text-white placeholder-gray-600 border-b border-gray-700 focus:outline-none"
             />
+            {errors.subject && <p className="text-red-500 text-sm">{errors.subject}</p>}
           </div>
 
           {/* Message Textarea */}
           <div>
+            <label className="text-white">Message:</label>
             <textarea
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
               placeholder="Write your message here"
               rows="4"
-              className="w-full p-3 bg-black text-white placeholder-gray-600 rounded-sm border-gray-700 focus:outline-none "
+              className="w-full p-3 bg-black text-white placeholder-gray-600 rounded-sm border-gray-700 focus:outline-none"
             ></textarea>
+            {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
           </div>
-        </div>
 
-        {/* Send Button */}
-        <div className="flex justify-end mt-4">
-          <button className="px-6 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition">
-            Send
-          </button>
-        </div>
+          {/* Send Button */}
+          <div className="flex justify-end mt-4">
+            <button
+              type="submit"
+              className="px-6 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition"
+            >
+              Send
+            </button>
+          </div>
+        </form>
       </div>
-         
+
+      <ToastContainer />
+
+      {/* Social Media Links */}
       <div className="flex space-x-6 mt-8">
         <a href="#" target="_blank" rel="noopener noreferrer">
           <FaGithub className="text-white text-2xl hover:text-gray-400 transition" />
@@ -88,12 +140,10 @@ const ContactForm = () => {
         <a href="#" target="_blank" rel="noopener noreferrer">
           <FaTwitter className="text-white text-2xl hover:text-gray-400 transition" />
         </a>
-
         <a href="#" target="_blank" rel="noopener noreferrer">
           <FaInstagram className="text-white text-2xl hover:text-gray-400 transition" />
         </a>
       </div>
-
     </div>
   );
 };

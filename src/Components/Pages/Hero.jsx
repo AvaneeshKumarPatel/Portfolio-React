@@ -38,9 +38,11 @@ const Hero = () => {
           scalable architecture.
         </p>
         <div className='flex gap-4 mt-6'>
-          <button className='px-6 py-3 bg-gray-800 text-white rounded-lg shadow-md hover:bg-gray-700 transition'>
+          <a href='https:www.google.com' className='px-6 py-3 bg-gray-800 text-white rounded-lg shadow-md hover:bg-gray-700 transition'
+          
+          >
             See my resume
-          </button>
+          </a>
           <button className='px-6 py-3 bg-transparent border border-gray-600 text-white rounded-lg hover:bg-gray-700 transition'>
             Get in touch
           </button>

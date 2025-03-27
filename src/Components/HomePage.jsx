@@ -3,12 +3,12 @@ import Hero from "./Pages/Hero"
 
 
 function HomePage() {
-  return  <div className=" ">
+  return  <div>
           <Navbar />         
            <Hero />
 </div>
         
-        
+     
 
 }
 
