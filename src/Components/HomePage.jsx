@@ -6,8 +6,6 @@ function HomePage() {
   return  <div className=" ">
           <Navbar />         
            <Hero />
-        
- 
 </div>
         
         

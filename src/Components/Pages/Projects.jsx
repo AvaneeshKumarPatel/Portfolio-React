@@ -87,7 +87,7 @@ export default function ProjectSlider() {
         
         {projects.map((project) => (
           <SwiperSlide key={project.id} className="flex justify-center">
-            <div className="flex flex-col items-center    bg-[#181818] p-6 rounded-xl shadow-lg max-w-sm text-center">
+            <div className="flex flex-col items-center    bg-gray-800 p-6 rounded-xl shadow-lg max-w-sm text-center">
               <img
                 src={project.image}
                 alt={project.name}
