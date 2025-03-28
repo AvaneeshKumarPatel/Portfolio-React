@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
+  const form = useRef();
+
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [subject, setSubject] = useState("");
@@ -12,7 +15,7 @@ const ContactForm = () => {
 
   const validateForm = () => {
     let newErrors = {};
-    
+
     if (!name.trim()) newErrors.name = "Name is required";
     if (!email.trim() || !/\S+@\S+\.\S+/.test(email)) newErrors.email = "Valid email is required";
     if (!subject.trim()) newErrors.subject = "Subject is required";
@@ -25,16 +28,29 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (validateForm()) {
-      toast.success("Form submitted successfully! 🚀");
-      setName("");
-      setEmail("");
-      setSubject("");
-      setMessage("");
-      setErrors({});
-    } else {
+    if (!validateForm()) {
       toast.error("Please fill in all fields correctly.");
+      return;
     }
+
+    emailjs
+      .sendForm("service_ntv753q", "template_zgs2hfi", form.current, "AvQUHg7ChJTmW69o5")
+      .then(
+        (result) => {
+          console.log("Email sent:", result.text);
+          toast.success("Email sent successfully! 🚀");
+          setName("");
+          setEmail("");
+          setSubject("");
+          setMessage("");
+          setErrors({});
+          form.current.reset();                    // Reset form fields
+        },
+        (error) => {
+          console.error("Email sending failed:", error.text);
+          toast.error("Failed to send email. Please try again.");
+        }
+      );
   };
 
   return (
@@ -62,12 +78,13 @@ const ContactForm = () => {
         </div>
 
         {/* Form Inputs */}
-        <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+        <form ref={form} onSubmit={handleSubmit} className="space-y-4 mt-4">
           {/* Email Field */}
           <div>
             <label className="text-white">Email:</label>
             <input
               type="email"
+              name="user_email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email address"
@@ -81,6 +98,7 @@ const ContactForm = () => {
             <label className="text-white">Name:</label>
             <input
               type="text"
+              name="user_name"
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Enter your name"
@@ -94,6 +112,7 @@ const ContactForm = () => {
             <label className="text-white">Subject:</label>
             <input
               type="text"
+              name="subject"
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
               placeholder="Enter subject"
@@ -106,6 +125,7 @@ const ContactForm = () => {
           <div>
             <label className="text-white">Message:</label>
             <textarea
+              name="message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Write your message here"

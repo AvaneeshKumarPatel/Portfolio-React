@@ -1,5 +1,4 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { IoClose } from "react-icons/io5";
 
 function Navbar() {
   return (
@@ -26,7 +25,6 @@ function Navbar() {
 
         <div className="flex gap-4 text-gray-300 justify-center items-center ml-auto ">
           <FaLinkedin className="text-xl cursor-pointer hover:text-white" />
-          <IoClose className="text-xl cursor-pointer hover:text-white" />
           <FaGithub className="text-xl cursor-pointer hover:text-white" />
         </div>
       </div>
