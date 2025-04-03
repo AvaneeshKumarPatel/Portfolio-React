@@ -136,10 +136,10 @@ const ContactForm = () => {
           </div>
 
           {/* Send Button */}
-          <div className="flex justify-end mt-4">
+          <div className="flex justify-center mt-4">
             <button
               type="submit"
-              className="px-6 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition"
+              className="px-6 py-2   bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition"
             >
               Send
             </button>
@@ -150,7 +150,7 @@ const ContactForm = () => {
       <ToastContainer />
 
       {/* Social Media Links */}
-      <div className="flex space-x-6 mt-8">
+      <div className="flex space-x-6   m-5 mt-8">
         <a href="#" target="_blank" rel="noopener noreferrer">
           <FaGithub className="text-white text-2xl hover:text-gray-400 transition" />
         </a>

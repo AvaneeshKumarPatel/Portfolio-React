@@ -69,8 +69,8 @@ export default function ProjectSlider() {
         spaceBetween={20}
         slidesPerView={3}
         breakpoints={{
-          640: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
+          360: { slidesPerView: 1 },
+          641: { slidesPerView: 2 },
           1024: { slidesPerView: 3 }
         }}
         centeredSlides={false}

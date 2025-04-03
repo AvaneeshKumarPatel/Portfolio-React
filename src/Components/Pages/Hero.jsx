@@ -42,7 +42,7 @@ const Hero = () => {
           <a href='https:www.google.com' className='px-6 py-3 bg-gray-800 text-white rounded-lg shadow-md hover:bg-gray-700 transition'
           
           >
-            See my resume
+            See my r
           </a>
           <button className='px-6 py-3 bg-transparent border border-gray-600 text-white rounded-lg hover:bg-gray-700 transition'>
             Get in touch
