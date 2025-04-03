@@ -69,7 +69,7 @@ const TechStackSection = () => {
           {techStack.map((tech, index) => (
             <motion.div
               key={index}
-              className="flex flex-col items-center p-4  bg-gray-800 rounded-lg shadow-lg grayscale-0 hover:grayscale  "
+              className="flex flex-col items-center p-4  bg-[#141414] border  border-gray-700 rounded-lg shadow-lg grayscale-0 hover:grayscale  "
               variants={itemVariants}
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 300 }}

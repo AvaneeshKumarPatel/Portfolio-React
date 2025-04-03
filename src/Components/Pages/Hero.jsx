@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import profileImage from '../../assets/geist.png';
 import avtar   from '../../assets/Neutral Minimal Simple Elegant Quote Instagram Post.png';
 
+
 // Array of languages
 const texts = ['Avaneesh', '阿瓦尼什', 'अवनीशः', 'Аваниш',];
 
@@ -17,7 +18,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className=' w-[100%] max-md:w-[80%] max-sm:w-full  justify-center top-0 flex flex-row bg-[#0d0d0d] p-10 md:p-20  shadow-custom'>
+    <div className=' w-[100%] max-md:w-[80%] max-sm:flex-col max-sm:w-full  justify-center top-0 flex flex-row bg-[#0d0d0d] p-10 md:p-20  shadow-custom'>
       <div className='flex flex-col gap-4'>
         <div className='flex items-center gap-3'>
           <p className='text-5xl text-gray-400 font-extrabold'>I&apos;m</p>
@@ -32,7 +33,7 @@ const Hero = () => {
             {texts[index]}
           </motion.h1>
         </div>
-        <p className='text-gray-400 text-lg leading-relaxed max-w-lg'>
+        <p className='text-gray-400 text-lg leading-relaxed max-w-lg '>
           A Frontend Developer skilled in React.js, Tailwind CSS, and JavaScript, specializing in building 
           responsive and high-performance web applications. Focused on seamless user interactions and
           scalable architecture.
@@ -48,20 +49,24 @@ const Hero = () => {
           </button>
         </div>
       </div>
-      <div className='mt-10 md:mt-0'>
+      <div className='mt-10 relative  w-[288px] h-[344px] md:mt-0'>
         <img 
           src={profileImage} 
           alt='profile' 
-          className='w-[288px] h-[344px] object-cover rounded-lg opacity-90'
+          className='w-full h-full object-cover rounded-lg opacity-90'
          
         />
         <img 
           src={avtar} 
           alt='profile' 
-          className='w-[288px] h-[344px]  object-cover  absolute top-[340px]'
+          className=' w-full h-full object-cover  absolute  bottom-0 '
           />
       </div>
-    </div>
+       <div>
+       </div>
+       </div>
+   
+
   );
 };
 
