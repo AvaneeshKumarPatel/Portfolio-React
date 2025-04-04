@@ -17,7 +17,7 @@ function Navbar() {
 
   return (
     <div className="bg-black">
-      <div className="container mx-auto flex h-16 w-full max-w-[1024px] items-center justify-between px-4 rounded-xl border border-white/25 backdrop-blur-md">
+      <div className="container mx-auto flex h-16 w-full max-w-[1024px]  mt-2 items-center justify-between px-4 rounded-xl border   border-gray-700  backdrop-blur-md" >
         {/* Logo */}
         <div className="text-white text-xl font-bold">[A]</div>
 
@@ -54,14 +54,14 @@ function Navbar() {
           <>
             {/* Sidebar */}
             <motion.div
-              initial={{ x: "-100%" }}
+              initial={{ x: "100%" }}
               animate={{ x: 0 }}
-              exit={{ x: "-100%" }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="fixed top-0 left-0 h-full w-2/3 bg-black text-white z-50 flex flex-col items-center pt-20 space-y-6 shadow-lg"
+              exit={{ x: "100%" }}
+              transition={{ type: "tween", duration: 0.4, ease: "easeInOut" }}
+              className="fixed top-0 right-0  h-full w-2/3 bg-black text-white z-50 flex flex-col items-center pt-20 space-y-6 shadow-lg"
             >
               <button
-                className="absolute top-4 right-4 text-white text-3xl"
+                className="absolute top-4 left-4 text-white text-3xl"
                 onClick={() => setMenuOpen(false)}
               >
                 <FaTimes />
