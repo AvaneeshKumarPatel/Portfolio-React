@@ -67,7 +67,7 @@ Portfolio-React/
 ## Screenshots
 
 ### Homepage
-![Homepage Screenshot](public/images/homepage.png)
+![Homepage Screenshot](https://i.postimg.cc/wTZB0866/Screenshot-2025-04-04-132747.png)
 
 ### Components
 ![Components Screenshot](public/images/components.png)
