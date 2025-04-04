@@ -70,7 +70,7 @@ Portfolio-React/
 ![Homepage Screenshot](/public/Screenshot%202025-04-04%20132747.png)
 
 ### Components
-![Components Screenshot](public/images/components.png)
+![Components Screenshot](public/Screenshot%202025-04-04%20132747_components.png)
 
 ---
 
