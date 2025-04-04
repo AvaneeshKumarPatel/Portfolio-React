@@ -151,16 +151,16 @@ const ContactForm = () => {
 
       {/* Social Media Links */}
       <div className="flex space-x-6   m-5 mt-8">
-        <a href="#" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/AvaneeshKumarPatel" target="_blank" rel="noopener noreferrer">
           <FaGithub className="text-white text-2xl hover:text-gray-400 transition" />
         </a>
-        <a href="#" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/avnishpatel0" target="_blank" rel="noopener noreferrer">
           <FaLinkedin className="text-white text-2xl hover:text-gray-400 transition" />
         </a>
         <a href="#" target="_blank" rel="noopener noreferrer">
           <FaTwitter className="text-white text-2xl hover:text-gray-400 transition" />
         </a>
-        <a href="#" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/avnishpatel143" target="_blank" rel="noopener noreferrer">
           <FaInstagram className="text-white text-2xl hover:text-gray-400 transition" />
         </a>
       </div>
@@ -169,3 +169,6 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+
+
+

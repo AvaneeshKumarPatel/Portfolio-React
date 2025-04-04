@@ -7,40 +7,46 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 // Import your project images
 import Project_1_image from "/src/assets/freepik__upload__8902.png";
+import Dev_Lookup   from "/src/assets/project1.png";
+import Course_finder from  "/src/assets/project2.png";
+import SpFashion from  "/src/assets/project4_sp_fashion.png";
+import NuloFoodPet  from  "/src/assets/project3_nulo.png"
+
+
 
 // Project Data Array
 const projects = [
   {
     id: 1,
-    name: "Subbi - Subscription Manager",
+    name: "Course Finder",
     description:
-      "Subbi is a side project that helps track subscription expenses and prevent accidental charges after trials end.",
-    image: Project_1_image,
-    link: "#"
+      "Designed and developed a responsive web application using React.js, to help users discover top-rated courses",
+    image: Course_finder,
+    link: "https://top-courses-cxon.vercel.app/"
   },
   {
     id: 2,
-    name: "Another Project",
+    name: "Dev Lookup:",
     description:
-      "This is another project that showcases my expertise in front-end development with React and animations.",
-    image: Project_1_image,
-    link: "#"
+      "Web application using HTML, CSS, JavaScript, and GitHub API to search and display GitHub user profiles and repositories",
+    image: Dev_Lookup,
+    link: "https://avaneeshkumarpatel.github.io/DevDetective/"
   },
   {
     id: 3,
-    name: "Portfolio Website",
+    name: "SP Fashion India",
     description:
-      "A sleek portfolio website built using React, Tailwind CSS, and Framer Motion animations.",
-    image: Project_1_image,
-    link: "#"
+                "Designed and developed a fully functional, responsive e-commerce website for SP Fashion India using WordPress and WooCommerce.",    
+    image:SpFashion ,
+    link: "https://spfashionindia.in/"
   },
   {
     id: 4,
-    name: "Portfolio Website",
+    name: "Nulo Pet Food",
     description:
-      "A sleek portfolio website built using React, Tailwind CSS, and Framer Motion animations.",
-    image: Project_1_image,
-    link: "#"
+      "Conducted end-to-end testing, including unit testing, to ensure the reliability and performance of the website across all features",
+    image: NuloFoodPet,
+    link: "https://spfashionindia.in/"
   },
   {
     id: 5,

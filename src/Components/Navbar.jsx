@@ -33,8 +33,12 @@ function Navbar() {
 
         {/* Social Icons */}
         <div className="hidden md:flex gap-4 text-gray-300">
+          <a href="https://www.linkedin.com/in/avnishpatel0" target="_blank">
           <FaLinkedin className="text-xl cursor-pointer hover:text-white" />
+          </a>
+          <a href=" https://github.com/AvaneeshKumarPatel" target="_blank">
           <FaGithub className="text-xl cursor-pointer hover:text-white" />
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -93,9 +97,15 @@ function Navbar() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.5, duration: 0.3 }}
                 className="flex gap-4 mt-4"
-              >
-                <FaLinkedin className="text-2xl cursor-pointer hover:text-gray-400" />
+              >  
+              
+               <a href="https://www.linkedin.com/in/avnishpatel0"  target="_blank">
+              <FaLinkedin 
+              className="text-2xl cursor-pointer hover:text-gray-400" />
+                </a>
+                <a href="https://github.com/AvaneeshKumarPatel" target="_blank">
                 <FaGithub className="text-2xl cursor-pointer hover:text-gray-400" />
+                </a>
               </motion.div>
             </motion.div>
 
