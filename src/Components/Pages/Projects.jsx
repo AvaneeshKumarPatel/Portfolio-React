@@ -68,7 +68,7 @@ const projects = [
 
 export default function ProjectSlider() {
   return (
-    <div className="w-full flex flex-col items-center text-white py-10 ">
+    <div className="w-full flex flex-col items-center max-md:w-[80%] max-md:ml-7 text-white py-10 ">
       <h1 className="text-5xl font-bold mb-6">Projects</h1>
 
       <Swiper
