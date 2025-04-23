@@ -39,7 +39,7 @@ const Hero = () => {
           scalable architecture.
         </p>
         <div className='flex gap-4 mt-6'>
-          <a href='https://docs.google.com/document/d/1XA4Ca4YpBanaYHkkDd0ys2ldJQAWBrsO/edit?usp=sharing&ouid=108196459184823974531&rtpof=true&sd=true'
+          <a href='https://docs.google.com/document/d/1XA4Ca4YpBanaYHkkDd0ys2ldJQAWBrsO/edit?usp=sharing&ouid=108196459184823974531&rtpof=true&sd=true' target='_blank'
            className='px-6 py-3 bg-gray-800 text-white rounded-lg shadow-md hover:bg-gray-700 transition'
           
           >
