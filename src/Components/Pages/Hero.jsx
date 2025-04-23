@@ -5,7 +5,7 @@ import avtar   from '../../assets/Neutral Minimal Simple Elegant Quote Instagram
 
 
 // Array of languages
-const texts = ['Avaneesh', '阿瓦尼什', 'अवनीशः', 'Аваниш',];
+const texts = ['Avaneesh', '阿瓦尼什', '阿凡尼 ', 'अवनीशः', 'Avanés ','Аваниш',];
 
 const Hero = () => {
   const [index, setIndex] = useState(0);
@@ -39,7 +39,8 @@ const Hero = () => {
           scalable architecture.
         </p>
         <div className='flex gap-4 mt-6'>
-          <a href='https:www.google.com' className='px-6 py-3 bg-gray-800 text-white rounded-lg shadow-md hover:bg-gray-700 transition'
+          <a href='https://docs.google.com/document/d/1XA4Ca4YpBanaYHkkDd0ys2ldJQAWBrsO/edit?usp=sharing&ouid=108196459184823974531&rtpof=true&sd=true'
+           className='px-6 py-3 bg-gray-800 text-white rounded-lg shadow-md hover:bg-gray-700 transition'
           
           >
             See my resume
